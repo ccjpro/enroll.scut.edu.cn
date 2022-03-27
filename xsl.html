@@ -1365,7 +1365,7 @@
                         <div class=info_list>
                             <div><span class=bt>*</span>开始日期</div>
                             <div class=form_select>
-                                <div class=dOutStartDate>2022-03-01</div>
+                                <div class=dOutStartDate id="current_date"></div>
                                 <span id=dOutStartDate>选择</span>
                             </div>
                         </div>
@@ -1373,7 +1373,17 @@
                         <div class=info_list>
                             <div><span class=bt>*</span>结束日期</div>
                             <div class=form_select>
-                                <div class=dOutEndDate>2022-03-31</div>
+                                <div class=dOutEndDate id="current-date"></div>
+                                <script>
+                                    date = new Date();
+                                    year = date.getFullYear();
+                                    month = date.getMonth() + 1;
+                                    day = date.getDate();
+                                    month1 = month.toString().padStart(2,'0');
+                                    day1 = day.toString().padStart(2,'0');
+                                    document.getElementById("current_date").innerHTML = year + "-" + month1 + "-" + day1;
+                                    document.getElementById("current-date").innerHTML = year + "-" + month1 + "-" + day1;
+                                </script>
                                 <span id=dOutEndDate>选择</span>
                             </div>
                         </div>
